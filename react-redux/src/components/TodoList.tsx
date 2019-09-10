@@ -4,22 +4,32 @@ import { TodoItem } from './TodoItem';
 
 interface Props {
   todos: Todo[];
+  onAddTodo: Function;
 }
 
-interface State {}
+interface State {
+  title: string;
+}
 
 export class TodoList extends React.Component<Props, State> {
+  public state: State = {
+    title: ''
+  };
+
   public render() {
     const { todos } = this.props;
+    const { title } = this.state;
 
     return (
       <React.Fragment>
+        <div>{ todos.map(this.renderTodo) }</div>
         <div>
-          { todos.map(this.renderTodo) }
+          <input type="text" value={title} onChange={this.handleChangeTitle} />
+          <button onClick={this.handleAddTodo}>Add</button>
         </div>
       </React.Fragment>
     )
-  }
+  };
 
   /**
    * key を設定しない場合、React が差分を計算する際に、要素の入れ替わりを検知できないので、
@@ -38,5 +48,27 @@ export class TodoList extends React.Component<Props, State> {
         {...todo}
       />
     )
+  };
+
+  private handleChangeTitle = (
+    event: React.SyntheticEvent<HTMLInputElement>
+  ) => {
+    this.changeTitle(event.currentTarget.value);
+  };
+
+  private handleAddTodo = (event: React.SyntheticEvent<HTMLElement>) => {
+    const { onAddTodo } = this.props;
+    const { title } = this.state;
+
+    onAddTodo(title);
+    this.reset();
+  }
+
+  private changeTitle(title: string) {
+    this.setState({ title });
+  }
+
+  private reset() {
+    this.setState({ title: '' });
   }
 }
