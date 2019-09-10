@@ -1,2 +1,3 @@
 # frontend-training
-フロントエンド練習用リポジトリ (react, redux)
+- フロントエンド練習用リポジトリ
+  - react, redux
