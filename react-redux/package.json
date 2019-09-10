@@ -4,17 +4,21 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "run-p start:*",
+    "start:parcel": "parcel src/index.html",
+    "start:server": "json-server --port 4000 --watch db.json"
   },
   "devDependencies": {
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.3",
     "prettier": "^1.18.2",
     "typescript": "^3.6.2"
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "json-server": "^0.15.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }
