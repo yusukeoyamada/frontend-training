@@ -1,4 +1,4 @@
-import { Todo } from '../types/';
+import { Todo } from '../types/CommonTypes';
 import axios from 'axios';
 
 // export const fetchTodos = () => {
