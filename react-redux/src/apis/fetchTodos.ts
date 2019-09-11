@@ -1,11 +1,24 @@
-import { Todo } from '../types/CommonTypes';
 import axios from 'axios';
+import { NormalizedTodos, Todo } from '../types/CommonTypes';
 
-// export const fetchTodos = () => {
-//   return axios.get('http://localhost:4000/todos');
-// }
+const normalize = (todos: Todo[]): NormalizedTodos => {
+  const todoIds = [];
+  const todosById = {};
 
-export const fetchTodos = async (): Promise<Todo[]> => {
+  todos.forEach(todo => {
+    todoIds.push(todo.id);
+    todosById[todo.id] = todo;
+  })
+
+  return (
+    {
+      todoIds,
+      todosById,
+    }
+  );
+}
+
+export const fetchTodos = async (): Promise<NormalizedTodos> => {
   const response = await axios.get<Todo[]>('http://localhost:4000/todos');
-  return response.data;
+  return normalize(response.data);
 }

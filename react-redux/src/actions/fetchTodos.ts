@@ -1,15 +1,15 @@
 import * as apis from '../apis';
 import { Action, ActionTypes } from '../types/ActionTypes';
-import { Todo } from '../types/CommonTypes';
+import { NormalizedTodos } from '../types/CommonTypes';
 
 const fetchTodosRequest = (): Action => (
   { type: ActionTypes.FETCH_TODOS_REQUEST, }
 );
 
-const fetchTodosSuccess = (todos: Todo[]): Action => (
+const fetchTodosSuccess = (todos: NormalizedTodos): Action => (
   {
     type: ActionTypes.FETCH_TODOS_SUCCESS,
-    payload: { todos }
+    payload: todos,
   }
 );
 

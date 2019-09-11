@@ -3,3 +3,8 @@ export interface Todo {
   title: string;
   completed: boolean;
 }
+
+export interface NormalizedTodos {
+  todoIds: number[];
+  todosById: Record<number, Todo>;
+}
