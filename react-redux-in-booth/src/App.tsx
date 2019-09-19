@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC} from 'react';
+
+import ColorfulBeads from './containers/ColorfulBeads';
+import Counter from './containers/Counter';
+
 import './App.css';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World!!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: FC = () => (
+  <div className="container">
+    <header>
+      <h1>ビーズカウンター</h1>
+    </header>
+    <Counter />
+    <ColorfulBeads />
+  </div>
+)
 
 export default App;
