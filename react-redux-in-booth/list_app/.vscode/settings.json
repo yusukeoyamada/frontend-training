@@ -1,0 +1,39 @@
+{
+  "workbench.editor.enablePreview": false,
+  "ruby.rubocop.executePath": "/Users/yusuke_oyamada/.rbenv/shims/ruby/bin/rubocop",
+  "breadcrumbs.enabled": true,
+  "editor.renderWhitespace": "all",
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "window.zoomLevel": 0,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.iconTheme": "vscode-icons",
+  "css.validate": true,
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ],
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "stylelint.enable": true,
+  "typescript.tsserver.trace": "verbose",
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "bracketPairColorizer.forceUniqueOpeningColor": true,
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}
